@@ -1,0 +1,29 @@
+export namespace CodeTypeIds {
+  export const MENU_TYPE = 'menu';
+  export const CATEGORY_TYPE = 'ct';
+  export const DEVICE_MODE = 'dc_mode';
+  export const DEVICE_TYPE = 'dc';
+  export const DEVICE_CATEGORY = 'ct';
+  export const TENENT_ELEMENT_TYPE = 'part';
+  export const DEVICE_ATTR_STATE = 'attState';
+  export const DEVICE_COMM_STATE =  'comm';
+  export const DEVICE_FUNC_STATE = 'func';
+  export const DEVICE_USER_ACTION = 'action';
+  export const CROP_ITEM = 'crop';
+  export const ALARM_TYPE = 'alarmtype';
+  export const ALARM_LEVEL = 'alarmlevel';
+  export const POWER_TYPE = 'powertype';
+  export const AUTOCONF_TYPE = 'conftype';
+  export const USER_ACTION = 'action';
+  export const DEVICE_GROUP = 'devicegroup';
+  export const PIPE_THERMOMETER_TYPE = 'p_tmp';
+  export const BOILER_PUMP_TYPE = 'p_pump';
+  export const TIMEOPTION = 'timeoption';
+  export const ROOFWINDOW_TYPE = 'roofwnd.type';
+  export const SIDEWINDOW_TYPE = 'sidewnd.type';
+  export const CROPPROTECTION_STATE = 'cp_state';
+  export const CHANNEL_TARGET_TYPE = 'channel_target';
+  export const CHANNEL_TYPE = 'channel_type';
+  export const USER_ACTION_GROUP = 'actiongroup';
+  export const FEATURES = 'features';
+}

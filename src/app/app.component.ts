@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './shared/services';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,12 @@ import { AuthService } from './shared/services';
 export class AppComponent implements OnInit {
   title = 'app works!';
   constructor() {}
-  ngOnInit() {}
+  ngOnInit() {
+    const socket = io('ws://', {
+      reconnection: true,
+      reconnectionDelay: 500,
+      forceNew: false,
+      transports: ['websocket']
+    });
+  }
 }

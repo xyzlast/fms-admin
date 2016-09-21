@@ -3,10 +3,12 @@ import { Http } from '@angular/http';
 import { BaseService } from './';
 
 @Injectable()
-export class AuthService {
+export class TenantService {
+
   constructor(private http: Http) {}
-  checkAuth(): Promise<any> {
-    const obj = this.http.get('/fms-api/v2/admin/auth/info', { withCredentials: true });
+  listAll(): Promise<any> {
+    const url = '/fms-api/v2/admin/common/list';
+    const obj = this.http.get(url, {withCredentials: true});
     return BaseService.progress(obj);
   }
 }
