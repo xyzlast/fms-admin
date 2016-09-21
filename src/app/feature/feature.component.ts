@@ -9,16 +9,12 @@ import { TenantService } from '../shared/services';
 export class FeatureComponent implements OnInit {
   tenants: any[];
   constructor(private tenantService: TenantService) { }
-
   ngOnInit() {
     this.tenantService.listAll().then(tenants => {
-      console.log(tenants);
       this.tenants = tenants;
     });
   }
-
   selectedTenant(event) {
     console.log(event);
   }
-
 }
