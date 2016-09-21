@@ -11,12 +11,22 @@ import { HomeComponent } from './home/home.component';
 
 import { AuthService } from './shared/services';
 import { MenuComponent } from './menu/menu.component';
+import { FeatureComponent } from './feature/feature.component';
+import { MongoComponent } from './mongo/mongo.component';
+import { ServerComponent } from './server/server.component';
+import { UserComponent } from './user/user.component';
+import { DeviceComponent } from './device/device.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    FeatureComponent,
+    MongoComponent,
+    ServerComponent,
+    UserComponent,
+    DeviceComponent
   ],
   imports: [
     BrowserModule,

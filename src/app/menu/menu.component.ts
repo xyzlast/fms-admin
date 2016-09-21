@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,11 +9,19 @@ import { AuthService } from '../shared/services';
 })
 export class MenuComponent implements OnInit {
   userInfo: any = null;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
   ngOnInit() {
     this.authService.checkAuth().then(data => {
       this.userInfo = data;
       console.log(this.userInfo);
+    });
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        if (event.url === '/mongo') {
+
+        }
+        console.log(event);
+      }
     });
   }
 
