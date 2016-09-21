@@ -1,0 +1,12 @@
+{
+  "/fms-api/v2": {
+    "target": "http://localhost:8000",
+    "pathRewrite": {
+      "/fms-api/v2": ""
+    }
+  },
+  "/socket.io": {
+    "target": "http://localhost:5000",
+    "ws": true
+  }
+}
