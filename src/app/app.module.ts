@@ -6,16 +6,18 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { ROUTES } from './app.routes';
-import { HomeComponent } from './home/home.component';
+import { AuthService, CodeService, TenantService } from './shared/services';
 
-import { AuthService } from './shared/services';
+import { ROUTES } from './app.routes';
+
+import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { FeatureComponent } from './feature/feature.component';
 import { MongoComponent } from './mongo/mongo.component';
 import { ServerComponent } from './server/server.component';
 import { UserComponent } from './user/user.component';
 import { DeviceComponent } from './device/device.component';
+import { TenantListComponent } from './shared/components/tenant-list/tenant-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { DeviceComponent } from './device/device.component';
     MongoComponent,
     ServerComponent,
     UserComponent,
-    DeviceComponent
+    DeviceComponent,
+    TenantListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import { DeviceComponent } from './device/device.component';
     RouterModule.forRoot(ROUTES, { useHash: true }),
   ],
   providers: [
-    AuthService
+    AuthService,
+    CodeService,
+    TenantService
   ],
   bootstrap: [AppComponent]
 })

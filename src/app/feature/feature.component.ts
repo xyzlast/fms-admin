@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TenantService } from '../shared/services';
 
 @Component({
   selector: 'app-feature',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feature.component.css']
 })
 export class FeatureComponent implements OnInit {
-
-  constructor() { }
+  tenants: any[];
+  constructor(private tenantService: TenantService) { }
 
   ngOnInit() {
+    this.tenantService.listAll().then(tenants => {
+      console.log(tenants);
+      this.tenants = tenants;
+    });
+  }
+
+  selectedTenant(event) {
+    console.log(event);
   }
 
 }
