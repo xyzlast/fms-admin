@@ -8,6 +8,8 @@ import { TenantService } from '../shared/services';
 })
 export class FeatureComponent implements OnInit {
   tenants: any[];
+  targetTenant: any;
+  features: any[];
   constructor(private tenantService: TenantService) { }
   ngOnInit() {
     this.tenantService.listAll().then(tenants => {
@@ -15,6 +17,15 @@ export class FeatureComponent implements OnInit {
     });
   }
   selectedTenant(event) {
-    console.log(event);
+    this.targetTenant = event;
+  }
+  onChangeFeatures(event) {
+    this.features = event;
+  }
+  save() {
+    const features = _(this.features).filter(f => f.checked).map(f => f.id);
+    this.tenantService.setFeatures(this.targetTenant.id, features).then(() => {
+      alert('저장되었습니다.');
+    });
   }
 }

@@ -18,6 +18,7 @@ import { ServerComponent } from './server/server.component';
 import { UserComponent } from './user/user.component';
 import { DeviceComponent } from './device/device.component';
 import { TenantListComponent } from './shared/components/tenant-list/tenant-list.component';
+import { TenantFeatureComponent } from './feature/tenant-feature/tenant-feature.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TenantListComponent } from './shared/components/tenant-list/tenant-list
     ServerComponent,
     UserComponent,
     DeviceComponent,
-    TenantListComponent
+    TenantListComponent,
+    TenantFeatureComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,7 @@
 .selected {
   background-color: blue;
 }
+
+.table-small-size {
+  font-size: 10px;
+}

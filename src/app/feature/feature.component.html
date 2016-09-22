@@ -1,7 +1,20 @@
+<div class="media">
+  <div class="media-left">
+    <img class="media-object" src="/assets/images/feature.png" alt="Generic placeholder image" width="98px" height="83px">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Features</h4>
+    Tenant에 할당되어 있는 기능들을 변경합니다.
+  </div>
+</div>
+<div class="w-100" style="text-align:right;margin-bottom:10px">
+  <button class="btn btn-primary" (click)="save()">Save</button>
+</div>
 <div class="row">
   <div class="col-md-4">
     <app-tenant-list [tenants]="tenants" (selectedTenant)="selectedTenant($event)"></app-tenant-list>
   </div>
   <div class="col-md-8">
+    <app-tenant-feature [targetTenant]="targetTenant" (changeFeatures)="onChangeFeatures($event)"></app-tenant-feature>
   </div>
 </div>
