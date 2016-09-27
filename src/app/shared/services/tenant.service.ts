@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http, URLSearchParams, Headers, RequestOptions } from '@angular/http';
 import { BaseService } from './';
+import { CodeService } from './';
+
 
 @Injectable()
 export class TenantService {
+  private http: Http;
 
-  constructor(private http: Http) {}
+  constructor(http: Http) {
+    this.http = http;
+  }
   listAll(): Promise<any> {
     const url = '/fms-api/v2/admin/common/list';
     const obj = this.http.get(url, {withCredentials: true});

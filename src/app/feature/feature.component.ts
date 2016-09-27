@@ -16,16 +16,19 @@ export class FeatureComponent implements OnInit {
       this.tenants = tenants;
     });
   }
-  selectedTenant(event) {
+  onSelectedTenant(event) {
     this.targetTenant = event;
   }
   onChangeFeatures(event) {
     this.features = event;
   }
   save() {
-    const features = _(this.features).filter(f => f.checked).map(f => f.id);
-    this.tenantService.setFeatures(this.targetTenant.id, features).then(() => {
-      alert('저장되었습니다.');
-    });
+    const ok = confirm('저장하시겠습니까?');
+    if (ok) {
+      const features = _(this.features).filter(f => f.checked).map(f => f.id);
+      this.tenantService.setFeatures(this.targetTenant.id, features).then(() => {
+        alert('저장되었습니다.');
+      });
+    }
   }
 }

@@ -119,3 +119,15 @@ export class TenantListComponent implements OnInit {
 `click` event가 발생하게 되면 `selectTenant` method가 호출이 되게 됩니다. `selectTenant` method는 안에서 `EventEmitter` 객체를 통해 이벤트를 발생시킵니다. `Component`에서 외부로 노출되는 값은 모두 Event가 되게됩니다.
 
  
+## Summary
+
+angular2는 4개의 binding type을 가지고 있습니다. `interpolation`, `event binding`, `property binding`, `two-way binding`이 있습니다.
+4개의 용도는 다음과 같습니다.
+
+* `interpolation`: model의 값을 단순 display 할때 사용됩니다. 
+* `event binding`: `Parent Component`에서 `Child Component`의 값을 가지고 올때(get) 사용됩니다. - `@Output`과 같이 사용됩니다.
+* `property binding`: `Parent Component`에서 `Child Component`의 값을 설정할 때(set) 사용됩니다. - `@Input`과 같이 사용됩니다.
+* `two-way binding`: `Component`안에서 value와 rendering결과를 일치시킬 때, 사용됩니다. - `input` element와 같이 사용되는 경우가 많습니다.
+
+Binding 부분은 angular2의 가장 핵심적인 부분입니다. 직접 예시 application을 만들어서 해보는것이 좋을 것 같습니다. 
+그럼 Happy Coding!

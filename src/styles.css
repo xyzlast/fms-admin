@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.main {
+  display: flex;
+}
+
+.tenants {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 350px;
+  padding-right: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tenant-item {
+  padding-left: 10px;
+  flex-grow: 1;
+}

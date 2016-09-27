@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './shared/services';
 import * as io from 'socket.io-client';
 
 @Component({
