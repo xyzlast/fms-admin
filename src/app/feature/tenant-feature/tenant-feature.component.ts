@@ -17,7 +17,7 @@ export class TenantFeatureComponent implements OnInit, OnChanges {
   unassignedFeatures: any[] = [];
   assignedFeatures: any[] = [];
 
-  constructor(private tenantService: TenantService, private codeService: CodeService) { }
+  constructor(private codeService: CodeService, private tenantService: TenantService) { }
 
   ngOnInit() {
     this.codeService.getByTypeId(CodeTypeIds.FEATURES).then(features => {

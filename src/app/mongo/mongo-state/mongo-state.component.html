@@ -1,0 +1,34 @@
+<div [@errorShowing]="errorShowingValue">
+  <div class="alert alert-danger" role="alert">
+    <strong>MongoCollectionError</strong>{{errorMessage}}
+  </div>
+  <button type="button" class="btn btn-danger"
+          (click)="onInitMongoStats()"
+          *ngIf="!doingCreateIndex">Initialize Collections</button>
+  <img src="/assets/images/ajax-loader.gif" *ngIf="doingCreateIndex" />
+</div>
+<div *ngIf="!hasError">
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <td>Collection</td>
+        <td>Count</td>
+        <td>StorageSize</td>
+        <td>IndexSize</td>
+        <td>AverageObjSize</td>
+        <td>Indexes</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mongoStat of mongoStats">
+        <td>{{mongoStat.name}}</td>
+        <td>{{mongoStat.count}}</td>
+        <td>{{mongoStat.storageSize}}</td>
+        <td>{{mongoStat.indexSize}}</td>
+        <td>{{mongoStat.avgObjSize}}</td>
+        <td>{{mongoStat.indexes}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TenantService } from '../shared/services';
+import { CodeService, TenantService } from '../shared/services';
 
 @Component({
   selector: 'app-feature',
@@ -10,7 +10,9 @@ export class FeatureComponent implements OnInit {
   tenants: any[];
   targetTenant: any;
   features: any[];
-  constructor(private tenantService: TenantService) { }
+  constructor(private tenantService: TenantService) {
+    console.log('constructor');
+   }
   ngOnInit() {
     this.tenantService.listAll().then(tenants => {
       this.tenants = tenants;

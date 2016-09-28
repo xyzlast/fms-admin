@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, OpaqueToken } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -19,6 +19,7 @@ import { UserComponent } from './user/user.component';
 import { DeviceComponent } from './device/device.component';
 import { TenantListComponent } from './shared/components/tenant-list/tenant-list.component';
 import { TenantFeatureComponent } from './feature/tenant-feature/tenant-feature.component';
+import { MongoStateComponent } from './mongo/mongo-state/mongo-state.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TenantFeatureComponent } from './feature/tenant-feature/tenant-feature.
     UserComponent,
     DeviceComponent,
     TenantListComponent,
-    TenantFeatureComponent
+    TenantFeatureComponent,
+    MongoStateComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +42,9 @@ import { TenantFeatureComponent } from './feature/tenant-feature/tenant-feature.
     RouterModule.forRoot(ROUTES, { useHash: true }),
   ],
   providers: [
-    AuthService,
     CodeService,
-    TenantService
+    TenantService,
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

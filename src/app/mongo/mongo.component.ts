@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { TenantService } from '../shared/services';
 
 @Component({
@@ -6,8 +6,9 @@ import { TenantService } from '../shared/services';
   templateUrl: './mongo.component.html',
   styleUrls: ['./mongo.component.css']
 })
-export class MongoComponent implements OnInit {
+export class MongoComponent implements OnInit, OnChanges {
   tenants: any[];
+  selectedTenant: any;
   constructor(private tenantService: TenantService) { }
 
   ngOnInit() {
@@ -16,7 +17,12 @@ export class MongoComponent implements OnInit {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+
+  }
+
   onSelectedTenant(event) {
-    console.log(event);
+    this.selectedTenant = event;
+    console.log(this.selectedTenant);
   }
 }

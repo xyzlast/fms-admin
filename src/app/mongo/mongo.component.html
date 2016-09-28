@@ -8,11 +8,11 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-4">
+<div class="main">
+  <div class="tenants">
     <app-tenant-list [tenants]="tenants" (selectedTenant)="onSelectedTenant($event)"></app-tenant-list>
   </div>
-  <div class="col-md-8">
-    <!--<app-tenant-feature [targetTenant]="targetTenant" (changeFeatures)="onChangeFeatures($event)"></app-tenant-feature>-->
+  <div class="tenant-item">
+    <app-mongo-state [targetTenant]="selectedTenant"></app-mongo-state>
   </div>
 </div>
