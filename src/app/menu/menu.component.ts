@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
   }
 
   login() {
-    window.location.href = '/fms-api/v2/admin/auth/login';
+    window.location.href = '/fms-api/v2/auth/login';
   }
 
   logout() {

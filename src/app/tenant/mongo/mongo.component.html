@@ -1,10 +1,18 @@
+<div class="media">
+  <div class="media-left">
+    <img class="media-object" src="/assets/images/feature.png" alt="Generic placeholder image" width="98px" height="83px">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Mongo</h4>
+    Tenant의 MongoDB State를 확인합니다.
+  </div>
+</div>
+
 <div [@errorShowing]="errorShowingValue">
   <div class="alert alert-danger" role="alert">
     <strong>MongoCollectionError</strong>{{errorMessage}}
   </div>
-  <button type="button" class="btn btn-danger"
-          (click)="onInitMongoStats()"
-          *ngIf="!doingCreateIndex">Initialize Collections</button>
+  <button type="button" class="btn btn-danger" (click)="onInitMongoStats()" *ngIf="!doingCreateIndex">Initialize Collections</button>
   <img src="/assets/images/ajax-loader.gif" *ngIf="doingCreateIndex" />
 </div>
 <div *ngIf="!hasError">
@@ -31,4 +39,3 @@
     </tbody>
   </table>
 </div>
-

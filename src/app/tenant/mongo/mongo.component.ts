@@ -1,13 +1,14 @@
 import {
   Component, OnInit, Input, Output, OnChanges, SimpleChanges,
-  animate, trigger, state, style, transition } from '@angular/core';
-import { TenantService } from '../../shared/services';
-import * as _ from 'lodash';
+  animate, trigger, state, style, transition
+} from '@angular/core';
+import { TenantService, CodeService } from '../../shared/services';
+import { Broadcaster } from '../../shared/utils';
 
 @Component({
-  selector: 'app-mongo-state',
-  templateUrl: './mongo-state.component.html',
-  styleUrls: ['./mongo-state.component.css'],
+  selector: 'app-mongo',
+  templateUrl: './mongo.component.html',
+  styleUrls: ['./mongo.component.css'],
   animations: [
     trigger('errorShowing', [
       state('hide', style({ height: '0px', display: 'none' })),
@@ -16,25 +17,24 @@ import * as _ from 'lodash';
     ])
   ]
 })
-export class MongoStateComponent implements OnInit, OnChanges {
-  @Input()
-  targetTenant: any;
-  hasError: boolean = false;
-  errorMessage: string;
-  mongoStats: MongoStatItem[] = [];
-  errorShowingValue: string = 'hide';
-  doingCreateIndex: boolean = false;
-  constructor(private tenantService: TenantService) { }
+export class MongoComponent implements OnInit {
+  private targetTenant: any;
+  private hasError: boolean = false;
+  private errorMessage: string;
+  private mongoStats: MongoStatItem[] = [];
+  private errorShowingValue: string = 'hide';
+  private doingCreateIndex: boolean = false;
 
-  ngOnInit() {
+  constructor(private codeService: CodeService,
+    private tenantService: TenantService,
+    private broadcaster: Broadcaster) { }
 
-  }
 
-  ngOnChanges(changes: SimpleChanges): any {
-    if (changes['targetTenant'] && changes['targetTenant'].currentValue) {
-      const tenant = changes['targetTenant'].currentValue;
-      return this.loadMongoStats(tenant.id);
-    }
+  public ngOnInit() {
+    this.broadcaster.on<any>('onSelectedTenant').subscribe(tenant => {
+      this.targetTenant = tenant;
+      this.fillMongoStats(tenant);
+    });
   }
 
   public onInitMongoStats() {
@@ -43,18 +43,18 @@ export class MongoStateComponent implements OnInit, OnChanges {
     const q = this.tenantService.initMongoStats(tenantId);
     return q.then(() => {
       this.doingCreateIndex = false;
-      return this.loadMongoStats(tenantId);
+      return this.fillMongoStats(tenantId);
     });
   }
 
-  loadMongoStats(tenantId) {
+  public fillMongoStats(tenant) {
     this.mongoStats = [];
-    const q = this.tenantService.getMongoStats(tenantId);
+    const q = this.tenantService.getMongoStats(tenant.id);
     return q.then(mongoStat => {
       this.hasError = false;
       this.errorShowingValue = 'hide';
       mongoStat.forEach(m => {
-        this.mongoStats.push(new MongoStatItem(tenantId, m));
+        this.mongoStats.push(new MongoStatItem(tenant.id, m));
       });
     }).catch(err => {
       this.errorMessage = err;

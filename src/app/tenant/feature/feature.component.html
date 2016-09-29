@@ -1,0 +1,32 @@
+<div class="media">
+  <div class="media-left">
+    <img class="media-object" src="/assets/images/feature.png" alt="Generic placeholder image" width="98px" height="83px">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Features</h4>
+    Tenant에 할당되어 있는 기능들을 변경합니다.
+  </div>
+</div>
+<div class="w-100" style="text-align:right;margin-bottom:10px">
+  <button class="btn btn-primary" (click)="save()">Save</button>
+</div>
+<div>
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <td></td>
+        <td>ID</td>
+        <td>이름</td>
+        <td>설명</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feature of features">
+        <td><input type="checkbox" [(ngModel)]="feature.checked" (click)="toggleFeature()" /></td>
+        <td>{{feature.id}}</td>
+        <td>{{feature.nameKo}}</td>
+        <td>{{feature.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

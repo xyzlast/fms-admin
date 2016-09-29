@@ -6,7 +6,7 @@ import { BaseService } from './';
 export class AuthService {
   constructor(private http: Http) {}
   checkAuth(): Promise<any> {
-    const obj = this.http.get('/fms-api/v2/admin/auth/info', { withCredentials: true });
+    const obj = this.http.get('/fms-api/v2/auth/info', { withCredentials: true });
     return BaseService.progress(obj);
   }
 }

@@ -5,16 +5,16 @@
       <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/home']">Home</a>
     </li>
     <li *ngIf="userInfo" class="nav-item">
-      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/feature']">Features</a>
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/tenant/feature']">Features</a>
     </li>
     <li *ngIf="userInfo" class="nav-item">
-      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/mongo']">MongoDB</a>
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/tenant/mongo']">MongoDB</a>
     </li>
     <li *ngIf="userInfo" class="nav-item">
-      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/user']">Users</a>
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/tenant/user']">Users</a>
     </li>
     <li *ngIf="userInfo" class="nav-item">
-      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/device']">Devices</a>
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/tenant/device']">Devices</a>
     </li>
   </ul>
   <form *ngIf="!userInfo" class="form-inline pull-xs-right">

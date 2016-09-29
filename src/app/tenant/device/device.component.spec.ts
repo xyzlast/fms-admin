@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { MongoStateComponent } from './mongo-state.component';
+import { DeviceComponent } from './device.component';
 
-describe('Component: MongoState', () => {
+describe('Component: Device', () => {
   it('should create an instance', () => {
-    let component = new MongoStateComponent();
+    let component = new DeviceComponent();
     expect(component).toBeTruthy();
   });
 });

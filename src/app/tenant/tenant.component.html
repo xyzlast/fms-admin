@@ -1,0 +1,8 @@
+<div class="main">
+  <div class="tenants">
+    <app-tenant-list [tenants]="tenants" (selectedTenant)="onSelectedTenant($event)"></app-tenant-list>
+  </div>
+  <div class="tenant-item">
+    <router-outlet></router-outlet>
+  </div>
+</div>
