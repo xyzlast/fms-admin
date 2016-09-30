@@ -32,9 +32,13 @@ export class MongoComponent implements OnInit {
 
   public ngOnInit() {
     this.broadcaster.on<any>('onSelectedTenant').subscribe(tenant => {
-      this.targetTenant = tenant;
       this.fillMongoStats(tenant);
     });
+    const tenantJson = localStorage.getItem('selectedTenant');
+    if (tenantJson) {
+      const tenant = JSON.parse(tenantJson);
+      this.fillMongoStats(tenant);
+    }
   }
 
   public onInitMongoStats() {
@@ -48,6 +52,10 @@ export class MongoComponent implements OnInit {
   }
 
   public fillMongoStats(tenant) {
+    if (this.targetTenant && this.targetTenant.id === tenant.id) {
+      return;
+    }
+    this.targetTenant = tenant;
     this.mongoStats = [];
     const q = this.tenantService.getMongoStats(tenant.id);
     return q.then(mongoStat => {

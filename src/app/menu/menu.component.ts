@@ -13,14 +13,14 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.authService.checkAuth().then(data => {
       this.userInfo = data;
-      console.log(this.userInfo);
+      // console.log(this.userInfo);
     });
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         if (event.url === '/mongo') {
 
         }
-        console.log(event);
+        // console.log(event);
       }
     });
   }

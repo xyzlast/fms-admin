@@ -16,7 +16,15 @@
   <img src="/assets/images/ajax-loader.gif" *ngIf="doingCreateIndex" />
 </div>
 <div *ngIf="!hasError">
-  <table class="table table-hover table-sm">
+  <kendo-grid [data]="mongoStats" [height]="500" [selectable]="true">
+    <kendo-grid-column field="name"></kendo-grid-column>
+    <kendo-grid-column field="count"></kendo-grid-column>
+    <kendo-grid-column field="storageSize"></kendo-grid-column>
+    <kendo-grid-column field="indexSize"></kendo-grid-column>
+    <kendo-grid-column field="avgObjSize"></kendo-grid-column>
+    <kendo-grid-column field="indexes"></kendo-grid-column>
+  </kendo-grid>
+  <!--<table class="table table-hover table-sm">
     <thead>
       <tr>
         <td>Collection</td>
@@ -37,5 +45,5 @@
         <td>{{mongoStat.indexes}}</td>
       </tr>
     </tbody>
-  </table>
+  </table>-->
 </div>

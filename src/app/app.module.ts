@@ -4,6 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+// NOTE: KENDO UI
+import { ButtonsModule } from '@progress/kendo-angular-buttons/dist/npm/js/main';
+import { GridModule } from '@progress/kendo-angular-grid/dist/npm/js/main';
+import { DialogModule } from '@progress/kendo-angular-dialog/dist/npm/js/main';
+
+import { ModalModule } from "ng2-modal";
+
 import { AppComponent } from './app.component';
 
 import { AuthService, CodeService, TenantService } from './shared/services';
@@ -38,13 +45,18 @@ import { UserComponent } from './tenant/user/user.component';
     FeatureComponent,
     MongoComponent,
     DeviceComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
+    ButtonsModule,
+    GridModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true }),
+    DialogModule,
+    ModalModule,
+    // RouterModule.forRoot(ROUTES, { useHash: true }),
+    RouterModule.forRoot(ROUTES),
   ],
   providers: [
     Broadcaster,

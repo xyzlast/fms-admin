@@ -40,4 +40,11 @@ export class TenantService {
     const obj = this.http.post(url, body, new RequestOptions({ headers: headers }));
     return BaseService.progress(obj);
   }
+  getUsers(tenantId): Promise<any> {
+    const url = '/fms-api/v2/admin/common/users';
+    const params = new URLSearchParams();
+    params.set('tenantId', tenantId);
+    const obj = this.http.get(url, { search: params, withCredentials: true });
+    return BaseService.progress(obj);
+  }
 }

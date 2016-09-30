@@ -1,6 +1,7 @@
 <table class="table table-hover table-sm">
   <tbody>
-    <tr *ngFor="let tenant of tenants" (click)="select(tenant.id)" [ngClass]="{'table-info': tenant.selected }">
+    <tr *ngFor="let tenant of tenants" (click)="select(tenant.id)"
+        [ngClass]="{'table-info': tenant.selected }">
       <td>{{tenant.id}}</td>
       <td>{{tenant.defaultInfo.name}}</td>
     </tr>
