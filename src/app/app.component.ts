@@ -7,7 +7,10 @@ import * as io from 'socket.io-client';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
+  public title: string = 'app works!';
+  public listItems: Array<string> = ["Baseball", "Basketball", "Cricket",
+    "Field Hockey", "Football", "Table Tennis", "Tennis", "Volleyball"];
+
   constructor() {}
   ngOnInit() {
     const socket = io('ws://', {
@@ -16,5 +19,9 @@ export class AppComponent implements OnInit {
       forceNew: false,
       transports: ['websocket']
     });
+  }
+
+  public onButtonClick() {
+    console.log('click');
   }
 }

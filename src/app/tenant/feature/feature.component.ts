@@ -69,6 +69,7 @@ export class FeatureComponent implements OnInit {
     if (this.targetTenant && this.targetTenant.id === tenant.id) {
       return;
     }
+    this.targetTenant = tenant;
     this.tenantService.getFeatures(tenant.id).then(features => {
       this.features.forEach(f => {
         f.checked = features.indexOf(f.id) >= 0;

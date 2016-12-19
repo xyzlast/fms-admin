@@ -5,11 +5,10 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 // NOTE: KENDO UI
-import { ButtonsModule } from '@progress/kendo-angular-buttons/dist/npm/js/main';
-import { GridModule } from '@progress/kendo-angular-grid/dist/npm/js/main';
-import { DialogModule } from '@progress/kendo-angular-dialog/dist/npm/js/main';
-
-import { ModalModule } from "ng2-modal";
+import { ButtonsModule } from '@progress/kendo-angular-buttons/dist/npm/main';
+import { GridModule } from '@progress/kendo-angular-grid/dist/npm/main';
+import { DialogModule } from '@progress/kendo-angular-dialog/dist/npm/main';
+import { InputsModule } from '@progress/kendo-angular-inputs/dist/npm/main';
 
 import { AppComponent } from './app.component';
 
@@ -49,13 +48,12 @@ import { UserComponent } from './tenant/user/user.component';
   ],
   imports: [
     BrowserModule,
-    ButtonsModule,
-    GridModule,
     FormsModule,
     HttpModule,
+    ButtonsModule,
+    GridModule,
     DialogModule,
-    ModalModule,
-    // RouterModule.forRoot(ROUTES, { useHash: true }),
+    InputsModule,
     RouterModule.forRoot(ROUTES),
   ],
   providers: [

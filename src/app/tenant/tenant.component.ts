@@ -67,7 +67,7 @@ export class TenantComponent implements OnInit, OnChanges, OnDestroy, DoCheck,
       this.selectedTenant.selected = true;
       this.onSelectedTenant(this.selectedTenant);
     });
-    console.log('parent - ngOnInit');
+    // console.log('parent - ngOnInit');
   }
 
   onSelectedTenant(event) {
@@ -77,27 +77,27 @@ export class TenantComponent implements OnInit, OnChanges, OnDestroy, DoCheck,
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('parent - ngOnChanges');
+    // console.log('parent - ngOnChanges');
   }
 
   ngDoCheck() {
-    console.log('parent - ngDoCheck');
+    // console.log('parent - ngDoCheck');
   }
   ngAfterContentInit() {
-    console.log('parent - ngAfterContentInit');
+    // console.log('parent - ngAfterContentInit');
   }
   ngAfterContentChecked() {
-    console.log('parent - ngAfterContentChecked');
+    // console.log('parent - ngAfterContentChecked');
   }
   ngAfterViewInit() {
-    console.log('parent - ngAfterViewInit');
+    // console.log('parent - ngAfterViewInit');
   }
 
   ngAfterViewChecked() {
-    console.log('parent - ngAfterViewChecked');
+    // console.log('parent - ngAfterViewChecked');
   }
 
   ngOnDestroy() {
-    console.log('parent - ngOnDestroy');
+    // console.log('parent - ngOnDestroy');
   }
 }

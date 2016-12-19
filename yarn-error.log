@@ -1,0 +1,88 @@
+Arguments: 
+  /home/ykyoon/.nvm/versions/node/v7.0.0/bin/node /home/ykyoon/.nvm/versions/node/v7.0.0/bin/yarn install
+
+PATH: 
+  /home/ykyoon/.sdkman/candidates/gradle/current/bin:/home/ykyoon/.rvm/gems/ruby-2.3.0/bin:/home/ykyoon/.rvm/gems/ruby-2.3.0@global/bin:/home/ykyoon/.rvm/rubies/ruby-2.3.0/bin:/home/ykyoon/.nvm/versions/node/v7.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ykyoon/.rvm/bin:/home/ykyoon/.rvm/bin:/home/ykyoon/apps/android-sdk-linux/tools:/home/ykyoon/apps/android-sdk-linux/platform-tools
+
+Yarn version: 
+  0.16.1
+
+Node version: 
+  7.0.0
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "fms-admin",
+    "version": "0.0.0",
+    "license": "MIT",
+    "angular-cli": {},
+    "scripts": {
+      "start": "ng serve",
+      "lint": "tslint \"src/**/*.ts\"",
+      "test": "ng test",
+      "pree2e": "webdriver-manager update",
+      "e2e": "protractor"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/common": "2.0.0",
+      "@angular/compiler": "2.0.0",
+      "@angular/core": "2.0.0",
+      "@angular/forms": "2.0.0",
+      "@angular/http": "2.0.0",
+      "@angular/platform-browser": "2.0.0",
+      "@angular/platform-browser-dynamic": "2.0.0",
+      "@angular/router": "3.0.0",
+      "@progress/kendo-angular-buttons": "^0.10.2",
+      "@progress/kendo-angular-dialog": "^0.10.2",
+      "@progress/kendo-angular-grid": "^0.3.3",
+      "@types/bluebird": "^3.0.33",
+      "@types/prettyjson": "0.0.28",
+      "@types/promise": "^7.1.30",
+      "@types/socket.io-client": "^1.4.27",
+      "bootstrap": "^4.0.0-alpha.4",
+      "core-js": "^2.4.1",
+      "jquery": "^3.1.0",
+      "ng2-modal": "0.0.21",
+      "prettyjson": "^1.1.3",
+      "rxjs": "5.0.0-beta.12",
+      "socket.io-client": "^1.5.0",
+      "ts-helpers": "^1.1.1",
+      "zone.js": "^0.6.23"
+    },
+    "devDependencies": {
+      "@types/jasmine": "^2.2.30",
+      "@types/lodash": "^4.14.35",
+      "angular-cli": "^1.0.0-beta.16",
+      "codelyzer": "~0.0.26",
+      "jasmine-core": "2.4.1",
+      "jasmine-spec-reporter": "2.5.0",
+      "karma": "1.2.0",
+      "karma-chrome-launcher": "^2.0.0",
+      "karma-cli": "^1.0.1",
+      "karma-jasmine": "^1.0.2",
+      "karma-remap-istanbul": "^0.2.1",
+      "protractor": "4.0.9",
+      "ts-node": "1.2.1",
+      "tslint": "3.13.0",
+      "typescript": "2.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ETIMEDOUT 23.253.4.114:80
+      at Object.exports._errnoException (util.js:1026:11)
+      at exports._exceptionWithHostPort (util.js:1049:20)
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
