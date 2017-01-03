@@ -1,0 +1,29 @@
+export class CodeTypeIds {
+  public static readonly MENU_TYPE: string = 'menu';
+  public static readonly CATEGORY_TYPE: string = 'ct';
+  public static readonly DEVICE_MODE: string = 'dc_mode';
+  public static readonly DEVICE_TYPE: string = 'dc';
+  public static readonly DEVICE_CATEGORY: string = 'ct';
+  public static readonly TENENT_ELEMENT_TYPE: string = 'part';
+  public static readonly DEVICE_ATTR_STATE: string = 'attState';
+  public static readonly DEVICE_COMM_STATE: string = 'comm';
+  public static readonly DEVICE_FUNC_STATE: string = 'func';
+  public static readonly DEVICE_USER_ACTION: string = 'action';
+  public static readonly CROP_ITEM: string = 'crop';
+  public static readonly ALARM_TYPE: string = 'alarmtype';
+  public static readonly ALARM_LEVEL: string = 'alarmlevel';
+  public static readonly POWER_TYPE: string = 'powertype';
+  public static readonly AUTOCONF_TYPE: string = 'conftype';
+  public static readonly USER_ACTION: string = 'action';
+  public static readonly DEVICE_GROUP: string = 'devicegroup';
+  public static readonly PIPE_THERMOMETER_TYPE: string = 'p_tmp';
+  public static readonly BOILER_PUMP_TYPE: string = 'p_pump';
+  public static readonly TIMEOPTION: string = 'timeoption';
+  public static readonly ROOFWINDOW_TYPE: string = 'roofwnd.type';
+  public static readonly SIDEWINDOW_TYPE: string = 'sidewnd.type';
+  public static readonly CROPPROTECTION_STATE: string = 'cp_state';
+  public static readonly CHANNEL_TARGET_TYPE: string = 'channel_target';
+  public static readonly CHANNEL_TYPE: string = 'channel_type';
+  public static readonly USER_ACTION_GROUP: string = 'actiongroup';
+  public static readonly CALCINFO: string = 'calcinfo';
+}

@@ -8,7 +8,7 @@ import {
   style, state } from '@angular/core';
 
 import { renderString } from 'prettyjson';
-import { TenantService } from '../../shared/services'
+import { TenantService } from '../../shared/services/tenant.service'
 import { Broadcaster } from '../../shared/utils';
 
 @Component({

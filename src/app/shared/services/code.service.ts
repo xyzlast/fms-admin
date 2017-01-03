@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
-import { BaseService } from './';
+import { BaseService } from './base.service';
 
 @Injectable()
 export class CodeService {

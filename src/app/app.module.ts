@@ -12,7 +12,10 @@ import { InputsModule } from '@progress/kendo-angular-inputs/dist/npm/main';
 
 import { AppComponent } from './app.component';
 
-import { AuthService, CodeService, TenantService } from './shared/services';
+import { AuthService, } from './shared/services/auth.service';
+import { CodeService } from './shared/services/code.service';
+import { TenantService } from './shared/services/tenant.service';
+
 import { Broadcaster } from './shared/utils';
 
 import { ROUTES } from './app.routes';
@@ -28,6 +31,7 @@ import { FeatureComponent } from './tenant/feature/feature.component';
 import { MongoComponent } from './tenant/mongo/mongo.component';
 import { DeviceComponent } from './tenant/device/device.component';
 import { UserComponent } from './tenant/user/user.component';
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -54,6 +58,7 @@ import { UserComponent } from './tenant/user/user.component';
     GridModule,
     DialogModule,
     InputsModule,
+    MaterialModule.forRoot(),
     RouterModule.forRoot(ROUTES),
   ],
   providers: [

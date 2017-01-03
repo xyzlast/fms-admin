@@ -4,7 +4,7 @@ import {
   AfterContentInit, AfterContentChecked
 } from '@angular/core';
 
-import { TenantService } from '../shared/services';
+import { TenantService } from '../shared/services/tenant.service';
 import { Broadcaster } from '../shared/utils';
 import {
   HostBinding,

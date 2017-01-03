@@ -2,7 +2,8 @@ import {
   Component, OnInit, Input, Output, OnChanges, SimpleChanges,
   animate, trigger, state, style, transition
 } from '@angular/core';
-import { TenantService, CodeService } from '../../shared/services';
+import { TenantService } from '../../shared/services/tenant.service';
+import { CodeService } from '../../shared/services/code.service';
 import { Broadcaster } from '../../shared/utils';
 
 @Component({
@@ -81,7 +82,7 @@ class MongoStatItem {
   public indexes: string;
 
   constructor(tenantId, jsonObj) {
-    let name = jsonObj.name as string;
+    let name: string = <string> jsonObj.name;
     this.name = name.substr(5).replace(tenantId.toString(), '');
     this.count = jsonObj.count;
     this.storageSize = jsonObj.storageSize;

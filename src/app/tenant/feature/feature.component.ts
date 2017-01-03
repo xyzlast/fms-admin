@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TenantService, CodeService } from '../../shared/services';
+import { TenantService } from '../../shared/services/tenant.service';
+import { CodeService } from '../../shared/services/code.service';
 import { CodeTypeIds } from '../../shared/constants';
 import { Broadcaster } from '../../shared/utils';
 import {
@@ -62,6 +63,7 @@ export class FeatureComponent implements OnInit {
     const tenantJson = localStorage.getItem('selectedTenant');
     if (tenantJson) {
       const tenant = JSON.parse(tenantJson);
+      console.log(tenant);
       this.fillFeatures(tenant);
     }
   }
